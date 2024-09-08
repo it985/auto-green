@@ -13,7 +13,10 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-
+      - name: Create local changes
+        run: |
+          now=$(date +"%D %T")
+          echo "[$now] Yes, it is." >> status_log.txt
       - name: Auto green
         run: |
           git config --local user.email "2071916845@qq.com"
