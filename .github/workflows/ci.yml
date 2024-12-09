@@ -25,3 +25,8 @@ jobs:
           git pull --rebase
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
           git push
+      - name: Delete Workflow Runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 30
+          keep_minimum_runs: 6
